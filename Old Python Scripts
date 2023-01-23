@@ -4,7 +4,7 @@ In this branch I wanted to include Python Scripts from old classes to see how it
 
 ##Example AER E 311
 
-`g = 7/5 # for air
+g = 7/5 # for air
 R = 287 # J/(kg*K)
 g0gm1 = g/(g-1)
 gm10g = 1/g0gm1
@@ -36,5 +36,5 @@ def p2tOp1(M):
     return (p2tOp1t(M)*ptOp(M))
 def nu(M):
     gp1Ogm1 = (g+1)/(g-1)
-    return ( np.sqrt(gp1Ogm1)*np.arctan(np.sqrt((M**2-1)/gp1Ogm1)) - np.arctan(np.sqrt(M**2-1)))`
+    return ( np.sqrt(gp1Ogm1)*np.arctan(np.sqrt((M**2-1)/gp1Ogm1)) - np.arctan(np.sqrt(M**2-1)))
     
