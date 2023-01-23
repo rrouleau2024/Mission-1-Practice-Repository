@@ -1,3 +1,40 @@
 #Python Scripts
 
 In this branch I wanted to include Python Scripts from old classes to see how it interacted with GitHub.
+
+##Example AER E 311
+
+`g = 7/5 # for air
+R = 287 # J/(kg*K)
+g0gm1 = g/(g-1)
+gm10g = 1/g0gm1
+Cv = R/(g-1)
+Cp =g*Cv
+
+def TtOT(M): 
+    return 1 + 0.5*(g-1)*M**2
+    
+def ptOp(M):
+    return TtOT(M)**(g/(g-1))
+
+def M2f(M):
+    return np.sqrt((1+.5*(g-1)*M**2)/(g*M**2-.5*(g-1)))
+    
+def T2OT1(M):
+    return (1+.5*(g-1)*M**2)/(1+.5*(g-1)*M2f(M)**2)
+
+def p2Op1(M):
+    return (1+g*M**2)/(1+g*M2f(M)**2)
+
+def rho2Orho1(M):
+    return (p2Op1(M)/T2OT1(M))
+
+def p2tOp1t(M):
+    return (p2Op1(M)*ptOp(M2f(M))/ptOp(M))
+
+def p2tOp1(M):
+    return (p2tOp1t(M)*ptOp(M))
+def nu(M):
+    gp1Ogm1 = (g+1)/(g-1)
+    return ( np.sqrt(gp1Ogm1)*np.arctan(np.sqrt((M**2-1)/gp1Ogm1)) - np.arctan(np.sqrt(M**2-1)))`
+    
